@@ -1,2 +1,2 @@
 # Backup-Desktop-App
-App which creates Backup of selected files on remote server
+App which creates Backup of selected folders on remote server
