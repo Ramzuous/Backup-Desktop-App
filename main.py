@@ -38,7 +38,20 @@ class Window:
         self.root.mainloop()
 
     def openSettings(self):
-        print("Open Settings")
+        
+        settingsWindow = tk.Tk()
+        
+        settingsWindow.title(settingsName)
+        
+        settingsWindow.geometry("400x300")
+
+        settingsWindow.resizable(0,0)
+    
+        inputExtensionLabel = tk.Label(self, text="This is a new window")
+    
+        #Label(settingsWindow, text ="This is a new window").pack()
+    
+        #print("Open Settings, name: ", settingsName)
         
         
     def runBackup(self):
