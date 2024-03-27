@@ -1,4 +1,6 @@
 import tkinter as tk
+from tkinter import Tk, Toplevel
+from tkinter.ttk import Label, Button
 
 class Window:
 
@@ -39,21 +41,25 @@ class Window:
 
     def openSettings(self):
         
-        settingsWindow = tk.Tk()
+        settingsWindow = Toplevel()
         
         settingsWindow.title(settingsName)
         
         settingsWindow.geometry("400x300")
-
+        
         settingsWindow.resizable(0,0)
-    
-        inputExtensionLabel = tk.Label(self, text="This is a new window")
-    
-        #Label(settingsWindow, text ="This is a new window").pack()
-    
-        #print("Open Settings, name: ", settingsName)
         
+        settingsWindow.grab_set() # block main window
         
+        Label(settingsWindow, text ="This is a new window").pack() 
+        
+        #self.runBackup_button = tk.Button(text=runBackupName, command=self.runBackup)
+        
+        #Button(settingsWindow, text=saveButton, command=saveSettings).pack()
+    
+    def saveSettinga(self):
+        print("Save Settings")
+    
     def runBackup(self):
         print("Run Backup")
             
@@ -65,6 +71,8 @@ appName = "Backup"
 settingsName = "Settings"
 
 runBackupName = "Run Backup"
+
+saveButton="Save"
 
 ###############################            
 w = Window(appName, settingsName, runBackupName)
